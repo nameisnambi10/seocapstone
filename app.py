@@ -61,13 +61,11 @@ model, feature_names, explainer = load_model()
 def load_llm():
 
     generator = pipeline(
-        "text2text-generation",
+        "text-generation",
         model="google/flan-t5-base"
     )
 
     return generator
-
-generator = load_llm()
 
 # ------------------------------------------------
 # FEATURE EXTRACTION
@@ -428,4 +426,5 @@ elif page=="SEO Analyzer":
             st.success(opt_title)
 
             st.subheader("Optimized Description")
+
             st.info(opt_desc)
